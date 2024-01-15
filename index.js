@@ -92,7 +92,6 @@ function createNewLisOfItems(itemToAdd) {
 
 // function to retrieve items from localstorage
 function getItemsFromLocalStorage() {
-    
     const retrieveItems = JSON.parse(localStorage.getItem('item'))
     return retrieveItems
 
@@ -115,18 +114,14 @@ function renderCart() {
                             <button class="remove-btn" data-remove=${items.uuid}>remove</button>
                             <p class="order-price">${items.price}</p>
                         </li>
-        
                  `
-               
                  total += items.price
                  document.getElementById('order-list').classList.remove('hidden')
         
          })
     } 
     
-    
-    totalPrice.innerText = total
-        
+    totalPrice.innerText = total  
     orderItems.innerHTML = renderItems
 
 
@@ -136,7 +131,6 @@ function renderCart() {
 function lisOfItems(items){
    const itemMenu = document.getElementById('item-body')
     
-
    return items.map(item => {
     
             const { emoji, name, ingredients, price, id } = item
@@ -153,9 +147,6 @@ function lisOfItems(items){
             </div>
             `
         })
-
-        
-   
 }
 
 
